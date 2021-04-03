@@ -14,7 +14,6 @@ Original App Design Project
 This app allows the user to track other player's stats and win rates in the game Eternal Return. The app also provides ...
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
 - **Category:** Reference
 - **Mobile:** This app would be primarily developed for mobile but would be just as viable on a computer, such as tinder or other similar apps. Functionality wouldn’t be limited to mobile devices, however mobile version could potentially have more features.
 - **Story:** Analyzes users game data, and compares them to other users to show relative skill level.
