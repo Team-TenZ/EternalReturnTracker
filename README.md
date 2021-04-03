@@ -74,8 +74,8 @@ This app allows the user to track other player's stats and win rates in the game
    * [Account Screen]
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://cdn.discordapp.com/attachments/169575828965949441/827761177894846514/wireframes.png" width=600>
+<img src="https://cdn.discordapp.com/attachments/378420172421332992/827761405390225418/unknown.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
