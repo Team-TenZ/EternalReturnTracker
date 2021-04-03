@@ -70,7 +70,6 @@ This app allows the user to track other player's stats and win rates in the game
 * [Character Select]
    * [Specific Character Screen]
 * [Ranking Screen]
-   * [Account Screen]
 * [Favorites Screen]
    * [Account Screen]
 
