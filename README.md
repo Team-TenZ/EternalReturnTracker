@@ -80,6 +80,7 @@ This app allows the user to track other player's stats and win rates in the game
 <img src="https://cdn.discordapp.com/attachments/378420172421332992/827761405390225418/unknown.png" width=600>
 
 ### [BONUS] Interactive Prototype
+<img src='https://github.com/Team-TenZ/EternalReturnTracker/blob/main/Interactive_Prototype.gif' title='Interactive Prototype' width='' />
 
 ## Schema 
 [This section will be completed in Unit 9]
