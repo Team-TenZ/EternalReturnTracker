@@ -1,7 +1,7 @@
 Original App Design Project
 ===
 
-# Eternal Return Tracker
+# Eternal Return Stat Tracker
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -20,7 +20,7 @@ This app allows the user to track other player's stats and win rates in the game
 - **Story:** Analyzes users game data, and compares them to other users to show relative skill level.
 - **Market:** Any player of Eternal Return can use this app.
 - **Habit:** This app could be used as often or unoften as the user wants depending on how focused they are on the game and their stats.
-- **Scope:**
+- **Scope:** This app will be finished in around 4 weeks.
 
 ## Product Spec
 
