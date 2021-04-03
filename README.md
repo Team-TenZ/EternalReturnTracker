@@ -66,12 +66,14 @@ This app allows the user to track other player's stats and win rates in the game
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* [Search Screen]
+   * [Account Screen]
+* [Character Select]
+   * [Specific Character Screen]
+* [Ranking Screen]
+   * [Account Screen]
+* [Favorites Screen]
+   * [Account Screen]
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
