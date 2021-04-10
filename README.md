@@ -91,7 +91,7 @@ This app allows the user to track other player's stats and win rates in the game
    | objectId      | String   | unique id for the chosen character  |
    | name        | String| charcter name |
    | image         | File     | image that is associated to character |
-   | skillOrder       | Pointer to Skills  | recommended leveling of skills |
+   | skillOrder       | Array Skills  | recommended leveling of skills |
    | pickRate | Number   | percent of time character is picked |
    | buildPath    | Pointer to Weapon   | recommended weapon path |
    | stats     | String | shows win rate and other various stats of character |
@@ -111,14 +111,19 @@ This app allows the user to track other player's stats and win rates in the game
 
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
-   | objectId      | String   | unique id for the user post (default field) |
-   | author        | Pointer to User| image author |
-   | image         | File     | image that user posts |
-   | caption       | String   | image caption by author |
-   | commentsCount | Number   | number of comments that has been posted to an image |
-   | likesCount    | Number   | number of likes for the post |
-   | createdAt     | DateTime | date when post is created (default field) |
-   | updatedAt     | DateTime | date when post is last updated (default field) |
+   | objectId      | String   | unique id for the chosen weapon  |
+   | name        | String| weapon name |
+   | image         | File     | image that is associated to the weapon |
+   | description        | String| description of the weapon |
+   
+#### Skill
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the chosen skill  |
+   | name        | String| skill name |
+   | image         | File     | image that is associated to the skill |
+   | description        | String| description of the skill |
    
 #### Leaderboard
 
