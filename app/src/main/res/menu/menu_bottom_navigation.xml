@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Search" />
+
+    <item
+        android:id="@+id/action_rankings"
+        android:icon="@drawable/ic_baseline_leaderboard_24"
+        android:title="Rankings" />
+
+    <item
+        android:id="@+id/action_characters"
+        android:icon="@drawable/ic_baseline_pregnant_woman_24"
+        android:title="Characters" />
+
+    <item
+        android:id="@+id/action_favorites"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="Favorites" />
+
+
+</menu>
