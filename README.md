@@ -28,41 +28,41 @@ This app allows the user to track other player's stats and win rates in the game
 **Required Must-have Stories**
 
 * [Search Function]
-1. User can look-up and favorite different accounts in one tab.
-      a. User will be able to see the account's match history and character choices.
-      b. Simple stats such as win rates, and average placement of the account will be shown as well.
+1. [ ] User can look-up and favorite different accounts in one tab.
+      * [ ] User will be able to see the account's match history and character choices.
+      * [ ] Simple stats such as win rates, and average placement of the account will be shown as well.
 * [Character Select]
-2. User can select a character from a list in another tab.
-      a. User will then be able to see their chosen character's top builds collected from other users.
+2. [ ] User can select a character from a list in another tab.
+      * [ ] User will then be able to see their chosen character's top builds collected from other users.
 * [Ranking View]
-3. User can see their ranking in another tab.
+3. [ ] User can see their ranking in another tab.
 * [Favorites View] 
-4. User can see their retained favorite accounts in another tab.
+4. [ ] User can see their retained favorite accounts in another tab.
 
 **Optional Nice-to-have Stories**
 
 * [Light and Dark Mode]
-1. User can select from dark and light mode.
+1. [ ] User can select from dark and light mode.
 
 ### 2. Screen Archetypes
 
-* [Search Screen]
-   * [Search Function]
-* [Character Screen]
-   * [Character Select]
-* [Ranking Screen]
-   * [Ranking View]
-* [Favorites Screen]
-   * [Favorites View]
+* [x] [Search Screen]
+   * [ ] [Search Function]
+* [ ] [Character Screen]
+   * [ ] [Character Select]
+* [ ] [Ranking Screen]
+   * [ ] [Ranking View]
+* [ ] [Favorites Screen]
+   * [ ] [Favorites View]
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [Search]
-* [Character]
-* [Ranking]
-* [Favorites]
+* [x] [Search]
+* [x] [Character]
+* [x] [Ranking]
+* [x] [Favorites]
 
 **Flow Navigation** (Screen to Screen)
 
