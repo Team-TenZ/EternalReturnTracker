@@ -14,13 +14,13 @@ import android.widget.ImageView;
 
 import com.example.eternalreturntracker.R;
 
-public class searchFragment extends Fragment {
+public class SearchFragment extends Fragment {
 
     private EditText etSearch;
     private ImageView ivSearchIcon;
 
 
-    public searchFragment() {
+    public SearchFragment() {
         // Required empty public constructor
     }
 
@@ -36,8 +36,6 @@ public class searchFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         etSearch = view.findViewById(R.id.etSearch);
         ivSearchIcon = view.findViewById(R.id.ivSearchIcon);
-
-
 
     }
 }
