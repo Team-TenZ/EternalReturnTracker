@@ -36,13 +36,13 @@ This app allows the user to track other player's stats and win rates in the game
       * [ ] User will then be able to see their chosen character's top builds collected from other users.
 * [Ranking View]
 3. [ ] User can see their ranking in another tab.
-* [Favorites View] 
-4. [ ] User can see their retained favorite accounts in another tab.
 
 **Optional Nice-to-have Stories**
 
 * [Light and Dark Mode]
 1. [ ] User can select from dark and light mode.
+* [Favorites View] 
+2. [ ] User can see their retained favorite accounts in another tab.
 
 ### 2. Screen Archetypes
 
