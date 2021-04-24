@@ -17,10 +17,5 @@
         android:icon="@drawable/ic_baseline_pregnant_woman_24"
         android:title="Characters" />
 
-    <item
-        android:id="@+id/action_favorites"
-        android:icon="@drawable/ic_baseline_star_24"
-        android:title="Favorites" />
-
 
 </menu>
