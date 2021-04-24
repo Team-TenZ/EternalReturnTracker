@@ -61,4 +61,13 @@ apply plugin: 'com.android.application'
         annotationProcessor 'org.parceler:parceler:1.1.12'
 
         compile 'com.android.support:design:28.0.0'
+
+
+        implementation 'com.google.code.gson:gson:2.8.5'
+        implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+        implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+        provided 'org.glassfish:javax.annotation:10.0-b28'
+
+        implementation 'com.google.android.material:material:1.1.0-alpha09'
+
     }
