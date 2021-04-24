@@ -76,6 +76,7 @@ This app allows the user to track other player's stats and win rates in the game
 
 ## Progress Gifs
 <img src='https://github.com/Team-TenZ/EternalReturnTracker/blob/main/update1.gif' title='Interactive Prototype' width='' />
+<img src='https://github.com/Team-TenZ/EternalReturnTracker/blob/main/update2.gif' title='Interactive Prototype' width='' />
 
 
 ## Wireframes
