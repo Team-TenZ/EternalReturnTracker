@@ -14,12 +14,23 @@ import com.example.eternalreturntracker.fragments.CharactersFragment;
 import com.example.eternalreturntracker.fragments.FavoritesFragment;
 import com.example.eternalreturntracker.fragments.RankingsFragment;
 import com.example.eternalreturntracker.fragments.SearchFragment;
+import com.example.eternalreturntracker.models.EternalReturnInterface;
+import com.example.eternalreturntracker.models.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+
     final FragmentManager fragmentManager = getSupportFragmentManager();
     private BottomNavigationView bottomNavigationView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         bottomNavigationView.setSelectedItemId((R.id.action_search));
+
+
+
+
+
 
     }
 }
