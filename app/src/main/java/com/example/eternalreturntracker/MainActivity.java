@@ -15,6 +15,7 @@ import com.example.eternalreturntracker.fragments.CharactersFragment;
 import com.example.eternalreturntracker.fragments.FavoritesFragment;
 import com.example.eternalreturntracker.fragments.RankingsFragment;
 import com.example.eternalreturntracker.fragments.SearchFragment;
+import com.example.eternalreturntracker.fragments.UserFragment;
 import com.example.eternalreturntracker.models.EternalReturnInterface;
 import com.example.eternalreturntracker.models.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -25,11 +26,14 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SearchFragment.OnDataPass{
 
 
     final FragmentManager fragmentManager = getSupportFragmentManager();
     private BottomNavigationView bottomNavigationView;
+
+    public String searchedUsername;
+
 
 
 
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         bottomNavigationView = findViewById((R.id.bottomNavigation));
 
@@ -74,5 +79,20 @@ public class MainActivity extends AppCompatActivity {
         });
         bottomNavigationView.setSelectedItemId((R.id.action_search));
 
+
     }
+
+    @Override
+    public void onDataPass(CharSequence data) {
+        Log.i("MAIN ACTIVITY","hello " + data);
+        searchedUsername = data.toString();
+        Log.i("MAIN ACTIVITY", "hello " + searchedUsername);
+        fragmentManager.beginTransaction().replace(R.id.flContainer, new UserFragment()).commit();
+    }
+
+    public String returnUsername(){
+        Log.i("USER FRAGMENT", "hello " + searchedUsername);
+        return searchedUsername;
+    }
+
 }
