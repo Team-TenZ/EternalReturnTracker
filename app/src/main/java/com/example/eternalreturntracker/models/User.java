@@ -1,44 +1,42 @@
 package com.example.eternalreturntracker.models;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-@Generated("jsonschema2pojo")
-public class User {
-
-    @SerializedName("code")
-    @Expose
-    private Integer code;
-    @SerializedName("message")
-    @Expose
+public class User{
+    // User class
+    private int code;
     private String message;
+
     @SerializedName("user")
     @Expose
-    private User__1 user;
+    private MoreUserDetails moreUserDetails;
 
-    public Integer getCode() {
+
+    // Constructors
+
+    public User(int code, MoreUserDetails moreUserDetails) {
+        this.code = code;
+        this.moreUserDetails = moreUserDetails;
+    }
+
+
+    // Getters and Setters
+
+
+    public int getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public void setCode(int code) {
         this.code = code;
     }
 
-    public String getMessage() {
-        return message;
+    public MoreUserDetails getMoreUserDetails() {
+        return moreUserDetails;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMoreUserDetails(MoreUserDetails moreUserDetails) {
+        this.moreUserDetails = moreUserDetails;
     }
-
-    public User__1 getUser() {
-        return user;
-    }
-
-    public void setUser(User__1 user) {
-        this.user = user;
-    }
-
 }
