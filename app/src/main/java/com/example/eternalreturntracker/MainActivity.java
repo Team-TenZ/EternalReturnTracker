@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
                         fragment = new CharactersFragment();
                         Toast.makeText(MainActivity.this, "Characters!", Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.action_favorites:
+                    //case R.id.action_favorites:
                     default:
                         // TODO: update fragment
                         fragment = new FavoritesFragment();
