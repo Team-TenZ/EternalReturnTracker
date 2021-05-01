@@ -28,7 +28,7 @@ This app allows the user to track other player's stats and win rates in the game
 **Required Must-have Stories**
 
 * [Search Function]
-1. [ ] User can look-up and favorite different accounts in one tab.
+1. [x] User can look-up and favorite different accounts in one tab.
       * [ ] User will be able to see the account's match history and character choices.
       * [ ] Simple stats such as win rates, and average placement of the account will be shown as well.
 * [Character Select]
@@ -47,7 +47,7 @@ This app allows the user to track other player's stats and win rates in the game
 ### 2. Screen Archetypes
 
 * [x] [Search Screen]
-   * [ ] [Search Function]
+   * [x] [Search Function]
 * [ ] [Character Screen]
    * [ ] [Character Select]
 * [ ] [Ranking Screen]
