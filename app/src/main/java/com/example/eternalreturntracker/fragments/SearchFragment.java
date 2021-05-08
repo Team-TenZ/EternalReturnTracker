@@ -23,6 +23,7 @@ import com.example.eternalreturntracker.models.User;
 import com.example.eternalreturntracker.models.MoreUserDetails;
 import com.google.gson.Gson;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -95,7 +96,7 @@ public class SearchFragment extends Fragment {
         Call<User> call = eternalReturnInterface.getUser("silvision");
         call.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<User> call, @NotNull Response<User> response) {
 
                 if(response != null) {
                     Log.i("STUFF", new Gson().toJson(response.body(),User.class));
@@ -117,7 +118,13 @@ public class SearchFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 CharSequence input = etSearch.getText();
-                passData(input);
+                if(input.toString().isEmpty()){
+                    Toast.makeText(getActivity(), "No user entered!", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    passData(input);
+                }
+
             }
         });
 
