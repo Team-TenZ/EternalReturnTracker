@@ -97,13 +97,6 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
         return searchedUsername;
     }
 
-    public void onDataPass1(CharSequence data) {
-        Log.i("MAIN ACTIVITY","hello " + data);
-        searchedCharacter = data.toString();
-        Log.i("MAIN ACTIVITY", "hello " + searchedCharacter);
-        fragmentManager.beginTransaction().replace(R.id.flContainer, new CharacterFragment()).commit();
-    }
-
     public String returnCharacter(){
         Log.i("Char FRAGMENT", "hello " + searchedCharacter);
         return searchedUsername;

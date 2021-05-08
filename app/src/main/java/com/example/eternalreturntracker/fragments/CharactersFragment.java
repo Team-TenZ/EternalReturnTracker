@@ -48,8 +48,9 @@ public class CharactersFragment extends Fragment {
     private EditText etSearch;
     private ImageView ivSearchIcon;
     private OnDataPass dataPasser;
-    public interface OnDataPass{
-        public void onDataPass1(CharSequence data);
+
+    public interface OnDataPass {
+        public void onDataPass(CharSequence data);
     }
 
     public CharactersFragment() {
@@ -95,8 +96,8 @@ public class CharactersFragment extends Fragment {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
 
-                if(response != null) {
-                    Log.i("STUFF", new Gson().toJson(response.body(),User.class));
+                if (response != null) {
+                    Log.i("STUFF", new Gson().toJson(response.body(), User.class));
                     Log.i("STUFF", response.body().getMoreUserDetails().getNickname());
                 }
 
@@ -115,20 +116,8 @@ public class CharactersFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 CharSequence input = etSearch.getText();
-                passData(input);
             }
         });
 
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        dataPasser = (OnDataPass) context;
-    }
-
-    // USE THIS METHOD TO SEND DATA IN THIS CLASS
-    public void passData(CharSequence data){
-        dataPasser.onDataPass1(data);
     }
 }
