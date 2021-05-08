@@ -30,7 +30,7 @@ This app allows the user to track other player's stats and win rates in the game
 * [Search Function]
 1. [x] User can look-up and favorite different accounts in one tab.
       * [ ] User will be able to see the account's match history and character choices.
-      * [ ] Simple stats such as win rates, and average placement of the account will be shown as well.
+      * [x] Simple stats such as win rates, and average placement of the account will be shown as well.
 * [Character Select]
 2. [ ] User can select a character from a list in another tab.
       * [ ] User will then be able to see their chosen character's top builds collected from other users.
