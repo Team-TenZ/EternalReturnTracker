@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.eternalreturntracker.fragments.CharacterFragment;
 import com.example.eternalreturntracker.fragments.CharactersFragment;
 import com.example.eternalreturntracker.fragments.FavoritesFragment;
 import com.example.eternalreturntracker.fragments.RankingsFragment;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
     private BottomNavigationView bottomNavigationView;
 
     public String searchedUsername;
+    public String searchedCharacter;
 
 
 
@@ -92,6 +94,18 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
 
     public String returnUsername(){
         Log.i("USER FRAGMENT", "hello " + searchedUsername);
+        return searchedUsername;
+    }
+
+    public void onDataPass1(CharSequence data) {
+        Log.i("MAIN ACTIVITY","hello " + data);
+        searchedCharacter = data.toString();
+        Log.i("MAIN ACTIVITY", "hello " + searchedCharacter);
+        fragmentManager.beginTransaction().replace(R.id.flContainer, new CharacterFragment()).commit();
+    }
+
+    public String returnCharacter(){
+        Log.i("Char FRAGMENT", "hello " + searchedCharacter);
         return searchedUsername;
     }
 
