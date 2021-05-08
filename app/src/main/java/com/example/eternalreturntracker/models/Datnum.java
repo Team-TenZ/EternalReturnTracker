@@ -3,7 +3,7 @@ package com.example.eternalreturntracker.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Datum {
+public class Datnum {
 
     @SerializedName("code")
     @Expose
