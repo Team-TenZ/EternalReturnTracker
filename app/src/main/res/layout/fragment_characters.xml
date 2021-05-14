@@ -22,7 +22,7 @@
         android:src="@drawable/eternal_logo" />
 
     <EditText
-        android:id="@+id/etSearch"
+        android:id="@+id/etSearchC"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivEternalLogo"
@@ -36,11 +36,11 @@
         android:textColor="@color/white" />
 
     <ImageView
-        android:id="@+id/ivSearchIcon"
+        android:id="@+id/ivSearchIconC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivEternalLogo"
-        android:layout_alignEnd="@+id/etSearch"
+        android:layout_alignEnd="@+id/etSearchC"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         app:tint="@color/white"

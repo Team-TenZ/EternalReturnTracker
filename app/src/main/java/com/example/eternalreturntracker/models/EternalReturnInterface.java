@@ -20,5 +20,6 @@ public interface EternalReturnInterface {
     @GET("/v1/user/stats/{userNum}/{seasonId}")
     Call<User> getUserStats(@Path("userNum") String userNum, @Path("seasonId") String seasonId);
 
-
+    @GET("/v1/data/Character")
+    Call<User> getCharacter(@Query("query") String username);
 }
