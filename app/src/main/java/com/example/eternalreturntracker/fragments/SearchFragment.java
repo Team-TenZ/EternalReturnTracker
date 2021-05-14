@@ -41,14 +41,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SearchFragment extends Fragment {
 
-    public static final String BASE_URL = "https://open-api.bser.io";
-    public static final String REST_CONSUMER_KEY = BuildConfig.CONSUMER_KEY;
+
     private EditText etSearch;
     private ImageView ivSearchIcon;
 
-    private OnDataPass dataPasser;
-    public interface OnDataPass{
-        public void onDataPass(CharSequence data);
+    private OnDataPassFromSearch dataPasser;
+    public interface OnDataPassFromSearch{
+        public void onDataPassFromSearch(CharSequence data);
     }
 
 
@@ -71,45 +70,6 @@ public class SearchFragment extends Fragment {
         etSearch = view.findViewById(R.id.etSearch);
         ivSearchIcon = view.findViewById(R.id.ivSearchIcon);
 
-        // RETROFIT RELATED THINGS
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        httpClient.addInterceptor(new Interceptor() {
-          @Override
-          public okhttp3.Response intercept(Chain chain) throws IOException {
-              Request request = chain.request()
-                      .newBuilder()
-                      .addHeader("x-api-key", REST_CONSUMER_KEY)
-                      .build();
-              return chain.proceed(request);
-          }
-        });
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(httpClient.build())
-                .build();
-
-        EternalReturnInterface eternalReturnInterface = retrofit.create(EternalReturnInterface.class);
-
-        Call<User> call = eternalReturnInterface.getUser("silvision");
-        call.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-
-                if(response != null) {
-                    Log.i("STUFF", new Gson().toJson(response.body(),User.class));
-                    Log.i("STUFF", response.body().getMoreUserDetails().getNickname());
-                    Log.i("STUFF", String.valueOf(response.body().getMoreUserDetails().getUserNum()));
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Log.i("STUFF", "onFailure for TRYING TO ENQUEUE THINGY", t);
-            }
-        });
 
 
         // Button for Search
@@ -118,6 +78,7 @@ public class SearchFragment extends Fragment {
             public void onClick(View view) {
                 CharSequence input = etSearch.getText();
                 passData(input);
+
             }
         });
 
@@ -126,11 +87,11 @@ public class SearchFragment extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        dataPasser = (OnDataPass) context;
+        dataPasser = (OnDataPassFromSearch) context;
     }
 
     // USE THIS METHOD TO SEND DATA IN THIS CLASS
     public void passData(CharSequence data){
-        dataPasser.onDataPass(data);
+        dataPasser.onDataPassFromSearch(data);
     }
 }

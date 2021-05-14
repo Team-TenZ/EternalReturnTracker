@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -19,20 +21,33 @@ import com.example.eternalreturntracker.fragments.UserFragment;
 import com.example.eternalreturntracker.models.EternalReturnInterface;
 import com.example.eternalreturntracker.models.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
 
+import java.io.IOException;
+import java.util.List;
+
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements SearchFragment.OnDataPass{
 
+public class MainActivity extends AppCompatActivity implements SearchFragment.OnDataPassFromSearch{
+
+
+    public static final String BASE_URL = "https://open-api.bser.io";
+    public static final String REST_CONSUMER_KEY = BuildConfig.CONSUMER_KEY;
 
     final FragmentManager fragmentManager = getSupportFragmentManager();
     private BottomNavigationView bottomNavigationView;
 
     public String searchedUsername;
+    public String userNumber;
+    Context context = this;
 
 
 
@@ -83,15 +98,15 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
     }
 
     @Override
-    public void onDataPass(CharSequence data) {
+    public void onDataPassFromSearch(CharSequence data){
         Log.i("MAIN ACTIVITY","hello " + data);
         searchedUsername = data.toString();
-        Log.i("MAIN ACTIVITY", "hello " + searchedUsername);
         fragmentManager.beginTransaction().replace(R.id.flContainer, new UserFragment()).commit();
+
+
     }
 
     public String returnUsername(){
-        Log.i("USER FRAGMENT", "hello " + searchedUsername);
         return searchedUsername;
     }
 

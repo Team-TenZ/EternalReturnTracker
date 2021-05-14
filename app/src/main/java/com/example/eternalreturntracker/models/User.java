@@ -3,6 +3,8 @@ package com.example.eternalreturntracker.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class User{
     // User class
     private int code;
@@ -12,17 +14,21 @@ public class User{
     @Expose
     private MoreUserDetails moreUserDetails;
 
+    @SerializedName("userStats")
+    @Expose
+    private List<UserStat> userStats;
+
 
     // Constructors
 
-    public User(int code, MoreUserDetails moreUserDetails) {
+    public User(int code, MoreUserDetails moreUserDetails, List<UserStat> userStats) {
         this.code = code;
         this.moreUserDetails = moreUserDetails;
+        this.userStats = userStats;
     }
 
 
     // Getters and Setters
-
 
     public int getCode() {
         return code;
@@ -39,4 +45,11 @@ public class User{
     public void setMoreUserDetails(MoreUserDetails moreUserDetails) {
         this.moreUserDetails = moreUserDetails;
     }
+
+    public List<UserStat> getUserStats(){ return userStats; }
+
+    public void setUserStats(List<UserStat> userStats){
+        this.userStats = userStats;
+    }
+
 }
