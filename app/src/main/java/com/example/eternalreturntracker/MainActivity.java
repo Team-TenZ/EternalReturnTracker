@@ -46,8 +46,7 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
     private BottomNavigationView bottomNavigationView;
 
     public String searchedUsername;
-    public String userNumber;
-    Context context = this;
+    public String searchedCharacter;
 
 
 
@@ -107,6 +106,11 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
     }
 
     public String returnUsername(){
+        return searchedUsername;
+    }
+
+    public String returnCharacter(){
+        Log.i("Char FRAGMENT", "hello " + searchedCharacter);
         return searchedUsername;
     }
 
