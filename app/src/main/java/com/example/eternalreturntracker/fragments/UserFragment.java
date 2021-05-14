@@ -101,12 +101,12 @@ public class UserFragment extends Fragment {
         final EternalReturnInterface eternalReturnInterface = retrofit.create(EternalReturnInterface.class);
 
         Call<User> call = eternalReturnInterface.getUser(searchedUsername);
+
+        // FIRST CALL TO GET USERNAME AND USERNUM
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
 
-
-                // CALLS THE 2nd GET, TO GET USERSTATS AFTER GETTING THE USERNUM
                 if(response != null) {
                     if(response.body().getCode() == 404){
                         Log.i("USER FRAGMENT","FAILED");
@@ -117,6 +117,7 @@ public class UserFragment extends Fragment {
                     Log.i("USER FRAGMENT", response.body().getMoreUserDetails().getNickname());
                     tvUsername.setText(response.body().getMoreUserDetails().getNickname());
 
+                    // CALL TO GET USER STATS
                     Call<User> call2 = eternalReturnInterface.getUserStats(String.valueOf(response.body().getMoreUserDetails().getUserNum()),"0");
                     call2.enqueue(new Callback<User>() {
                         @Override
@@ -160,8 +161,27 @@ public class UserFragment extends Fragment {
 
                         }
                         @Override
-                        public void onFailure(Call<User> call, Throwable t) {
+                        public void onFailure(Call<User> call2, Throwable t) {
                             Log.i("STUFF2", "onFailure for TRYING TO ENQUEUE THINGY", t);
+                        }
+                    });
+
+                    // CALL TO GET USER GAMES
+                    Call<User> call3 = eternalReturnInterface.getUserGames(String.valueOf(response.body().getMoreUserDetails().getUserNum()));
+                    call3.enqueue(new Callback<User>() {
+                        @Override
+                        public void onResponse(Call<User> call3, Response<User> response3) {
+                            if(response3 != null){
+                                Log.i("USER FRAGMENT", new Gson().toJson(response3.body(),User.class));
+
+
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<User> call3, Throwable t) {
+                            Log.i("STUFF3", "onFailure for TRYING TO ENQUEUE THINGY", t);
+
                         }
                     });
 

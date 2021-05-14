@@ -1,5 +1,6 @@
 package com.example.eternalreturntracker.models;
 
+import com.example.eternalreturntracker.models.UserGameInfo.UserGame;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -18,13 +19,18 @@ public class User{
     @Expose
     private List<UserStat> userStats;
 
+    @SerializedName("userGames")
+    @Expose
+    private List<UserGame> userGames;
+
 
     // Constructors
 
-    public User(int code, MoreUserDetails moreUserDetails, List<UserStat> userStats) {
+    public User(int code, MoreUserDetails moreUserDetails, List<UserStat> userStats, List<UserGame> userGames) {
         this.code = code;
         this.moreUserDetails = moreUserDetails;
         this.userStats = userStats;
+        this.userGames = userGames;
     }
 
 
@@ -41,15 +47,17 @@ public class User{
     public MoreUserDetails getMoreUserDetails() {
         return moreUserDetails;
     }
+    public void setMoreUserDetails(MoreUserDetails moreUserDetails) { this.moreUserDetails = moreUserDetails; }
 
-    public void setMoreUserDetails(MoreUserDetails moreUserDetails) {
-        this.moreUserDetails = moreUserDetails;
-    }
 
     public List<UserStat> getUserStats(){ return userStats; }
-
     public void setUserStats(List<UserStat> userStats){
         this.userStats = userStats;
     }
+
+
+    public List<UserGame> getUserGames(){ return userGames; }
+    public void setUserGames(List<UserGame> userGames) { this.userGames = userGames; }
+
 
 }
