@@ -135,16 +135,74 @@
         android:layout_marginTop="10dp"
         android:background="@color/gray" />
 
-    <View
-        android:id="@+id/divider4"
+    <TextView
+        android:id="@+id/tvGame1"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/divider3"
-        android:layout_alignParentStart="true"
+        android:layout_alignStart="@+id/tvSeasonWins"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="5dp"
+        android:text="Game 1 - (WIN) - Sissela Lv 6"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvGame2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvGame1"
+        android:layout_alignStart="@+id/tvSeasonWins"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="0dp"
-        android:background="@color/gray" />
+        android:text="Game 2 - (8th) - Sissela Lv 13"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvGame3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvGame2"
+        android:layout_alignStart="@+id/tvSeasonWins"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="0dp"
+        android:text="Game 3 - (2nd) - Adela Lv 9"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvGame4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvGame3"
+        android:layout_alignStart="@+id/tvSeasonWins"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="0dp"
+        android:text="Game 4 - (11th) - Sissela Lv 11"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvGame5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvGame4"
+        android:layout_alignStart="@+id/tvSeasonWins"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="0dp"
+        android:text="Game 5 - (3rd) - Sissela Lv 17"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 </RelativeLayout>

@@ -49,10 +49,50 @@ public class UserFragment extends Fragment {
     private TextView tvRank;
     private TextView tvSeasonWins;
 
+    private TextView tvGame1;
+    private TextView tvGame2;
+    private TextView tvGame3;
+    private TextView tvGame4;
+    private TextView tvGame5;
+
+
+    public enum Characters{
+        Jackie,
+        Aya,
+        Fiora,
+        Magnus,
+        Zahir,
+        Nadine,
+        Hyunwoo,
+        Hart,
+        Isol,
+        LiDailin,
+        Yuki,
+        Hyejin,
+        Xiukai,
+        Chiara,
+        Sissela,
+        Silvia,
+        Adriana,
+        Shoichi,
+        Emma,
+        Lenox,
+        Rozzi,
+        Luke,
+        Cathy,
+        Adela,
+        Bernice,
+        Barbara,
+        Alex,
+        Sua,
+        Leon
+    }
+
 
 
     public UserFragment() {
         // Required empty public constructor
+
     }
 
     @Override
@@ -71,7 +111,11 @@ public class UserFragment extends Fragment {
         tvAveragePlace = view.findViewById(R.id.tvAveragePlace);
         tvRank = view.findViewById(R.id.tvRank);
         tvSeasonWins = view.findViewById(R.id.tvSeasonWins);
-
+        tvGame1 = view.findViewById(R.id.tvGame1);
+        tvGame2 = view.findViewById(R.id.tvGame2);
+        tvGame3 = view.findViewById(R.id.tvGame3);
+        tvGame4 = view.findViewById(R.id.tvGame4);
+        tvGame5 = view.findViewById(R.id.tvGame5);
 
         MainActivity activity = (MainActivity) getActivity();
         searchedUsername = activity.returnUsername();
@@ -114,7 +158,6 @@ public class UserFragment extends Fragment {
                     }
 
                     Log.i("USER FRAGMENT", new Gson().toJson(response.body(),User.class));
-                    Log.i("USER FRAGMENT", response.body().getMoreUserDetails().getNickname());
                     tvUsername.setText(response.body().getMoreUserDetails().getNickname());
 
                     // CALL TO GET USER STATS
@@ -126,7 +169,7 @@ public class UserFragment extends Fragment {
                             if(response2 != null){
                                 DecimalFormat precision = new DecimalFormat("0.0");
 
-                                Log.i("USER FRAGMENT", new Gson().toJson(response2.body(),User.class));
+                                Log.i("USER FRAGMENT2", new Gson().toJson(response2.body(),User.class));
 
                                 //WINRATE
                                 float winrate = ( (float) response2.body().getUserStats().get(0).getTotalWins() / response2.body().getUserStats().get(0).getTotalGames() * 100);
@@ -143,7 +186,7 @@ public class UserFragment extends Fragment {
                                 //MMR
                                 int rank = response2.body().getUserStats().get(0).getMmr();
                                 if(rank == 0) {
-                                    Log.i("USER FRAGMENT", "No MMR");
+                                    Log.i("USER FRAGMENT2", "No MMR");
                                     tvRank.setText("No Rank");
                                 }
                                 else{
@@ -166,14 +209,47 @@ public class UserFragment extends Fragment {
                         }
                     });
 
+
                     // CALL TO GET USER GAMES
                     Call<User> call3 = eternalReturnInterface.getUserGames(String.valueOf(response.body().getMoreUserDetails().getUserNum()));
                     call3.enqueue(new Callback<User>() {
                         @Override
                         public void onResponse(Call<User> call3, Response<User> response3) {
                             if(response3 != null){
-                                Log.i("USER FRAGMENT", new Gson().toJson(response3.body(),User.class));
+                                Log.i("USER FRAGMENT3", new Gson().toJson(response3.body(),User.class));
 
+                                // COULD DO FOR LOOPS HERE
+
+
+                                //FOR GAME 1
+                                String gameRank = String.valueOf(response3.body().getUserGames().get(0).getGameRank()) + numberSuffix(response3.body().getUserGames().get(0).getGameRank());
+                                Characters charNum = Characters.values()[(response3.body().getUserGames().get(0).getCharacterNum())-1];
+                                int charLevel = response3.body().getUserGames().get(0).getCharacterLevel();
+                                tvGame1.setText("Game 1 - (" + gameRank + ") - " + charNum + " Lv " + charLevel);
+
+                                //FOR GAME 2
+                                gameRank = String.valueOf(response3.body().getUserGames().get(1).getGameRank()) + numberSuffix(response3.body().getUserGames().get(1).getGameRank());
+                                charNum = Characters.values()[(response3.body().getUserGames().get(1).getCharacterNum())-1];
+                                charLevel = response3.body().getUserGames().get(1).getCharacterLevel();
+                                tvGame2.setText("Game 2 - (" + gameRank + ") - " + charNum + " Lv " + charLevel);
+
+                                //FOR GAME 3
+                                gameRank = String.valueOf(response3.body().getUserGames().get(2).getGameRank()) + numberSuffix(response3.body().getUserGames().get(2).getGameRank());
+                                charNum = Characters.values()[(response3.body().getUserGames().get(2).getCharacterNum())-1];
+                                charLevel = response3.body().getUserGames().get(2).getCharacterLevel();
+                                tvGame3.setText("Game 3 - (" + gameRank + ") - " + charNum + " Lv " + charLevel);
+
+                                //FOR GAME 4
+                                gameRank = String.valueOf(response3.body().getUserGames().get(3).getGameRank()) + numberSuffix(response3.body().getUserGames().get(3).getGameRank());
+                                charNum = Characters.values()[(response3.body().getUserGames().get(3).getCharacterNum())-1];
+                                charLevel = response3.body().getUserGames().get(3).getCharacterLevel();
+                                tvGame4.setText("Game 4 - (" + gameRank + ") - " + charNum + " Lv " + charLevel);
+
+                                //FOR GAME 5
+                                gameRank = String.valueOf(response3.body().getUserGames().get(4).getGameRank()) + numberSuffix(response3.body().getUserGames().get(4).getGameRank());
+                                charNum = Characters.values()[(response3.body().getUserGames().get(4).getCharacterNum())-1];
+                                charLevel = response3.body().getUserGames().get(4).getCharacterLevel();
+                                tvGame5.setText("Game 5 - (" + gameRank + ") - " + charNum + " Lv " + charLevel);
 
                             }
                         }
@@ -197,5 +273,22 @@ public class UserFragment extends Fragment {
 
     }
 
+    public String numberSuffix(int n){
+        if(n >= 11 && n <= 13){
+            return "th";
+        }
+        switch(n % 10) {
+            case 1:
+                return "st";
+            case 2:
+                return "nd";
+            case 3:
+                return "rd";
+            default:
+                return "th";
+        }
+    }
+
 
 }
+

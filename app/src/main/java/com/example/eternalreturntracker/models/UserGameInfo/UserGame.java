@@ -2,11 +2,6 @@ package com.example.eternalreturntracker.models.UserGameInfo;
 
 import javax.annotation.Generated;
 
-import com.example.eternalreturntracker.models.UserGameInfo.Equipment;
-import com.example.eternalreturntracker.models.UserGameInfo.KillMonsters;
-import com.example.eternalreturntracker.models.UserGameInfo.MasteryLevel;
-import com.example.eternalreturntracker.models.UserGameInfo.SkillLevelInfo;
-import com.example.eternalreturntracker.models.UserGameInfo.SkillOrderInfo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -117,16 +112,16 @@ public class UserGame {
     private Double attackRange;
     @SerializedName("criticalStrikeChance")
     @Expose
-    private Integer criticalStrikeChance;
+    private float criticalStrikeChance;
     @SerializedName("criticalStrikeDamage")
     @Expose
-    private Integer criticalStrikeDamage;
+    private float criticalStrikeDamage;
     @SerializedName("coolDownReduction")
     @Expose
     private Integer coolDownReduction;
     @SerializedName("lifeSteal")
     @Expose
-    private Integer lifeSteal;
+    private float lifeSteal;
     @SerializedName("amplifierToMonster")
     @Expose
     private Integer amplifierToMonster;
@@ -574,19 +569,17 @@ public class UserGame {
         this.attackRange = attackRange;
     }
 
-    public Integer getCriticalStrikeChance() {
+    public float getCriticalStrikeChance() {
         return criticalStrikeChance;
     }
 
-    public void setCriticalStrikeChance(Integer criticalStrikeChance) {
-        this.criticalStrikeChance = criticalStrikeChance;
-    }
+    public void setCriticalStrikeChance(float criticalStrikeChance) { this.criticalStrikeChance = criticalStrikeChance; }
 
-    public Integer getCriticalStrikeDamage() {
+    public float getCriticalStrikeDamage() {
         return criticalStrikeDamage;
     }
 
-    public void setCriticalStrikeDamage(Integer criticalStrikeDamage) {
+    public void setCriticalStrikeDamage(float criticalStrikeDamage) {
         this.criticalStrikeDamage = criticalStrikeDamage;
     }
 
@@ -598,7 +591,7 @@ public class UserGame {
         this.coolDownReduction = coolDownReduction;
     }
 
-    public Integer getLifeSteal() {
+    public float getLifeSteal() {
         return lifeSteal;
     }
 

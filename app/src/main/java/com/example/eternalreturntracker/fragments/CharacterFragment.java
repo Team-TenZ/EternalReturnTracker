@@ -102,9 +102,9 @@ public class CharacterFragment extends Fragment {
         final EternalReturnInterface eternalReturnInterface = retrofit.create(EternalReturnInterface.class);
 
         Call<User> call = eternalReturnInterface.getCharacter(searchedCharacter);
-        call.enqueue(new Callback<Character>() {
+        call.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<Character> call, Response<Character> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
 
 
                 // CALLS THE 2nd GET, TO GET USERSTATS AFTER GETTING THE USERNUM
