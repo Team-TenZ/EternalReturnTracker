@@ -21,5 +21,5 @@ public interface EternalReturnInterface {
     Call<User> getUserStats(@Path("userNum") String userNum, @Path("seasonId") String seasonId);
 
     @GET("/v1/data/Character")
-    Call<User> getCharacter(@Query("query") String username);
+    Call<CharacterStat> getCharacter();
 }
