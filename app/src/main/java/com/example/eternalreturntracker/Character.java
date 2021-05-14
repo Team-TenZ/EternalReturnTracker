@@ -1,29 +1,43 @@
 package com.example.eternalreturntracker;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.util.ArrayList;
+import com.example.eternalreturntracker.models.CharacterStat;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
-public class Character {
-    String name;
-    int maxHp;
-    int maxSp;
-    double moveSpeed;
+public class Character{
+    // User class
+    private int code;
+    private String message;
 
-    public Character(JSONObject jsonObject) throws JSONException {
-        name = jsonObject.getString("name");
-        maxHp = jsonObject.getInt("maxHp");
-        maxSp = jsonObject.getInt("maxSp");
-        moveSpeed = jsonObject.getDouble("moveSpeed");
+    @SerializedName("characterStats")
+    @Expose
+    private List<CharacterStat> characterStats;
+
+
+    // Constructors
+
+    public Character(int code, List<CharacterStat> characterStats) {
+        this.code = code;
+        this.characterStats = characterStats;
     }
 
-    public static List<Character> fromJsonArray(JSONArray characterJsonArray) throws JSONException {
-        List<Character> characters = new ArrayList<>();
-        for(int i = 0; i < characterJsonArray.length(); i++) {
-            characters.add(new Character(characterJsonArray.getJSONObject(i)));
-        }
-        return characters;
+
+    // Getters and Setters
+
+    public int getCode() {
+        return code;
     }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public List<CharacterStat> getUserStats(){ return characterStats; }
+
+    public void setUserStats(List<CharacterStat> characterStats){
+        this.characterStats = characterStats;
+    }
+
 }

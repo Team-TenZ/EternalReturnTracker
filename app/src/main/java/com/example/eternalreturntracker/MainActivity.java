@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.eternalreturntracker.fragments.CharacterFragment;
 import com.example.eternalreturntracker.fragments.CharactersFragment;
 import com.example.eternalreturntracker.fragments.FavoritesFragment;
 import com.example.eternalreturntracker.fragments.RankingsFragment;
@@ -36,7 +37,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class MainActivity extends AppCompatActivity implements SearchFragment.OnDataPassFromSearch{
+public class MainActivity extends AppCompatActivity implements SearchFragment.OnDataPassFromSearch, CharactersFragment.OnDataPassFromSearch2{
 
 
     public static final String BASE_URL = "https://open-api.bser.io";
@@ -101,8 +102,12 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
         Log.i("MAIN ACTIVITY","hello " + data);
         searchedUsername = data.toString();
         fragmentManager.beginTransaction().replace(R.id.flContainer, new UserFragment()).commit();
+    }
 
-
+    public void onDataPassFromSearch2(CharSequence data){
+        Log.i("MAIN ACTIVITY","hello " + data);
+        searchedCharacter = data.toString();
+        fragmentManager.beginTransaction().replace(R.id.flContainer, new CharacterFragment()).commit();
     }
 
     public String returnUsername(){
@@ -110,8 +115,7 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
     }
 
     public String returnCharacter(){
-        Log.i("Char FRAGMENT", "hello " + searchedCharacter);
-        return searchedUsername;
+        return searchedCharacter;
     }
 
 }
