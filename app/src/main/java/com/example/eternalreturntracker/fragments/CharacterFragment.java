@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.example.eternalreturntracker.Character;
 import com.example.eternalreturntracker.MainActivity;
 import com.example.eternalreturntracker.R;
+import com.example.eternalreturntracker.models.CharacterStat;
 import com.example.eternalreturntracker.models.EternalReturnInterface;
 import com.example.eternalreturntracker.models.User;
 import com.google.gson.Gson;
@@ -51,7 +52,37 @@ public class CharacterFragment extends Fragment {
     private TextView tvSeasonWins;
 
 
-
+    public enum Characters{
+        Jackie,
+        Aya,
+        Fiora,
+        Magnus,
+        Zahir,
+        Nadine,
+        Hyunwoo,
+        Hart,
+        Isol,
+        LiDailin,
+        Yuki,
+        Hyejin,
+        Xiukai,
+        Chiara,
+        Sissela,
+        Silvia,
+        Adriana,
+        Shoichi,
+        Emma,
+        Lenox,
+        Rozzi,
+        Luke,
+        Cathy,
+        Adela,
+        Bernice,
+        Barbara,
+        Alex,
+        Sua,
+        Leon
+    }
     public CharacterFragment() {
         // Required empty public constructor
     }
@@ -101,27 +132,25 @@ public class CharacterFragment extends Fragment {
 
         final EternalReturnInterface eternalReturnInterface = retrofit.create(EternalReturnInterface.class);
 
-        Call<User> call = eternalReturnInterface.getCharacter(searchedCharacter);
-        call.enqueue(new Callback<User>() {
+        Call<CharacterStat> call = eternalReturnInterface.getCharacter();
+        call.enqueue(new Callback<CharacterStat>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<CharacterStat> call, Response<CharacterStat> response) {
 
 
                 // CALLS THE 2nd GET, TO GET USERSTATS AFTER GETTING THE USERNUM
                 if(response != null) {
-                    if(response.body().getCode() == 404){
+                    if(response.body().getCharacterCode() == 1){
                         Log.i("CHARACTER FRAGMENT","FAILED");
                         return;
                     }
 
                     Log.i("CHARACTER FRAGMENT", new Gson().toJson(response.body(),User.class));
-                    Log.i("CHARACTER FRAGMENT", response.body().getMoreUserDetails().getNickname());
-                    tvUsername.setText(response.body().getMoreUserDetails().getNickname());
 
-                    Call<User> call2 = eternalReturnInterface.getUserStats(String.valueOf(response.body().getMoreUserDetails().getUserNum()),"0");
-                    call2.enqueue(new Callback<User>() {
+                    Call<CharacterStat> call2 = eternalReturnInterface.getUserStats(String.valueOf(response.body().getMoreUserDetails().getUserNum()),"0");
+                    call2.enqueue(new Callback<CharacterStat>() {
                         @Override
-                        public void onResponse(Call<User> call2, Response<User> response2) {
+                        public void onResponse(Call<CharacterStat> call2, Response<CharacterStat> response2) {
 
                             if(response2 != null){
                                 DecimalFormat precision = new DecimalFormat("0.0");
@@ -161,7 +190,7 @@ public class CharacterFragment extends Fragment {
 
                         }
                         @Override
-                        public void onFailure(Call<User> call, Throwable t) {
+                        public void onFailure(Call<CharacterStat> call, Throwable t) {
                             Log.i("STUFF2", "onFailure for TRYING TO ENQUEUE THINGY", t);
                         }
                     });
@@ -171,7 +200,7 @@ public class CharacterFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
+            public void onFailure(Call<CharacterStat> call, Throwable t) {
                 Log.i("STUFF", "onFailure for TRYING TO ENQUEUE THINGY", t);
             }
         });
