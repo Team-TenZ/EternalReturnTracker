@@ -6,38 +6,40 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Character{
-    // User class
-    private int code;
-    private String message;
+public class Character {
 
-    @SerializedName("characterStats")
+    @SerializedName("code")
     @Expose
-    private List<CharacterStat> characterStats;
+    private Integer code;
+    @SerializedName("message")
+    @Expose
+    private String message;
+    @SerializedName("data")
+    @Expose
+    private List<CharacterStat> data = null;
 
-
-    // Constructors
-
-    public Character(int code, List<CharacterStat> characterStats) {
-        this.code = code;
-        this.characterStats = characterStats;
-    }
-
-
-    // Getters and Setters
-
-    public int getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
-    public List<CharacterStat> getCharacterStats(){ return characterStats; }
+    public String getMessage() {
+        return message;
+    }
 
-    public void setUserStats(List<CharacterStat> characterStats){
-        this.characterStats = characterStats;
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public List<CharacterStat> getData() {
+        return data;
+    }
+
+    public void setData(List<CharacterStat> data) {
+        this.data = data;
     }
 
 }
