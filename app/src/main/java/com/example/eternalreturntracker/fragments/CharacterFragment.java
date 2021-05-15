@@ -1,7 +1,5 @@
 package com.example.eternalreturntracker.fragments;
 
-import android.bluetooth.le.ScanSettings;
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,17 +13,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.eternalreturntracker.Character;
+import com.example.eternalreturntracker.models.Character;
 import com.example.eternalreturntracker.MainActivity;
 import com.example.eternalreturntracker.R;
-import com.example.eternalreturntracker.models.CharacterStat;
 import com.example.eternalreturntracker.models.EternalReturnInterface;
-import com.example.eternalreturntracker.models.User;
 import com.example.eternalreturntracker.models.UserGameInfo.Test;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -153,7 +148,7 @@ public class CharacterFragment extends Fragment {
                     }
 
                     Log.i("CHARACTER FRAGMENT", new Gson().toJson(response.body(), Character.class));
-                    tvHp.setText(response.body().getCharacterStats().get(characterCode-1).getMaxHp());
+                    tvHp.setText(String.valueOf(response.body().getData().get(characterCode-1).getMaxHp()));
 
 
                 }

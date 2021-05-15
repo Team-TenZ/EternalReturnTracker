@@ -46,7 +46,7 @@ public class CharacterStat {
     private Double attackSpeedLimit;
     @SerializedName("attackSpeedMin")
     @Expose
-    private Integer attackSpeedMin;
+    private Double attackSpeedMin;
     @SerializedName("moveSpeed")
     @Expose
     private Double moveSpeed;
@@ -167,11 +167,11 @@ public class CharacterStat {
         this.attackSpeedLimit = attackSpeedLimit;
     }
 
-    public Integer getAttackSpeedMin() {
+    public Double getAttackSpeedMin() {
         return attackSpeedMin;
     }
 
-    public void setAttackSpeedMin(Integer attackSpeedMin) {
+    public void setAttackSpeedMin(Double attackSpeedMin) {
         this.attackSpeedMin = attackSpeedMin;
     }
 

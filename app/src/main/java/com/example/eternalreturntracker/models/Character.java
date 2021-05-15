@@ -1,4 +1,4 @@
-package com.example.eternalreturntracker;
+package com.example.eternalreturntracker.models;
 
 import com.example.eternalreturntracker.models.CharacterStat;
 import com.google.gson.annotations.Expose;
