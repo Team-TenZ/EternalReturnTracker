@@ -3,16 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
+
     tools:context=".fragments.RankingsFragment">
+
+    <TextView
+        android:id="@+id/Leaderboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:text="Leaderboard"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        tools:layout_centerHorizontal="false"
+        tools:text="Leaderboard" />
 
     <TextView
         android:id="@+id/tvNumber1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/Leaderboard"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
         android:textSize="35sp"
         tools:text="1 - Silvision" />
 
@@ -21,9 +37,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvNumber1"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="75dp"
+        android:layout_alignStart="@+id/tvNumber1"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="3dp"
+        android:textColor="@color/white"
         android:textSize="35sp"
         tools:text="2 - Silvision" />
 
@@ -32,9 +49,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvNumber2"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="75dp"
+        android:layout_alignStart="@+id/tvNumber2"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="3dp"
+        android:textColor="@color/white"
         android:textSize="35sp"
         tools:text="2 - Silvision" />
 
@@ -43,9 +61,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvNumber3"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="75dp"
+        android:layout_alignStart="@+id/tvNumber3"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="3dp"
+        android:textColor="@color/white"
         android:textSize="35sp"
         tools:text="2 - Silvision" />
 
@@ -54,9 +73,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvNumber4"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="75dp"
+        android:layout_alignStart="@+id/tvNumber4"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="3dp"
+        android:textColor="@color/white"
         android:textSize="35sp"
         tools:text="2 - Silvision" />
 
@@ -65,9 +86,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvNumber5"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="75dp"
+        android:layout_alignStart="@+id/tvNumber5"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="3dp"
+        android:textColor="@color/white"
         android:textSize="35sp"
         tools:text="2 - Silvision" />
 
@@ -76,9 +98,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvNumber6"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="75dp"
+        android:layout_alignStart="@+id/tvNumber6"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="3dp"
+        android:textColor="@color/white"
         android:textSize="35sp"
         tools:text="2 - Silvision" />
 
@@ -87,9 +110,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvNumber7"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="75dp"
+        android:layout_alignStart="@+id/tvNumber7"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="3dp"
+        android:textColor="@color/white"
         android:textSize="35sp"
         tools:text="2 - Silvision" />
 
@@ -98,9 +122,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvNumber8"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="75dp"
+        android:layout_alignStart="@+id/tvNumber8"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="3dp"
+        android:textColor="@color/white"
         android:textSize="35sp"
         tools:text="2 - Silvision" />
 
@@ -109,10 +134,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvNumber9"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="75dp"
+        android:layout_alignStart="@+id/tvNumber9"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="3dp"
+        android:textColor="@color/white"
         android:textSize="35sp"
-        tools:text="2 - Silvision" />
+        tools:text="10 - Silvision" />
 
 </RelativeLayout>

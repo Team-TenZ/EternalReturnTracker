@@ -89,12 +89,14 @@ public class RankingsFragment extends Fragment {
 
         final EternalReturnInterface eternalReturnInterface = retrofit.create(EternalReturnInterface.class);
 
-        Call<Ranking> call1 = eternalReturnInterface.getTopRanks("1", "1");
+        Call<Ranking> call = eternalReturnInterface.getTopRanks("1", "1");
 
-        call1.enqueue(new Callback<Ranking>() {
+        call.enqueue(new Callback<Ranking>() {
             @Override
             public void onResponse(Call<Ranking> call, Response<Ranking> response) {
+                Log.i("RANKING FRAGMENT", String.valueOf(response.body()));
                 if(response != null){
+                    Log.i("RANKING FRAGMENT", response.body().getTopRanks().get(0).getNickname());
                     tvUser1.setText("1 - " + response.body().getTopRanks().get(0).getNickname());
                     tvUser2.setText("2 - " + response.body().getTopRanks().get(1).getNickname());
                     tvUser3.setText("3 - " + response.body().getTopRanks().get(2).getNickname());

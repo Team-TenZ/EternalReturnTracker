@@ -17,7 +17,7 @@ public class Ranking {
     private String message;
     @SerializedName("topRanks")
     @Expose
-    private List<RankingDetails> topRanks = null;
+    private List<RankingDetails> topRanks;
 
     public Integer getCode() {
         return code;
