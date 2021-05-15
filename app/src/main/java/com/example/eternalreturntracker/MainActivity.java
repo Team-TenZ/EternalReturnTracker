@@ -67,24 +67,20 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
                 Fragment fragment;
                 switch (item.getItemId()){
                     case R.id.action_search:
-                        Toast.makeText(MainActivity.this, "Search!", Toast.LENGTH_SHORT).show();
                         fragment = new SearchFragment();
                         break;
                     case R.id.action_rankings:
                         // TODO: update fragment
                         fragment = new RankingsFragment();
-                        Toast.makeText(MainActivity.this, "Rankings!", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.action_characters:
                         // TODO: update fragment
                         fragment = new CharactersFragment();
-                        Toast.makeText(MainActivity.this, "Characters!", Toast.LENGTH_SHORT).show();
                         break;
                     //case R.id.action_favorites:
                     default:
                         // TODO: update fragment
                         fragment = new FavoritesFragment();
-                        Toast.makeText(MainActivity.this, "Favorites!", Toast.LENGTH_SHORT).show();
                         break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
