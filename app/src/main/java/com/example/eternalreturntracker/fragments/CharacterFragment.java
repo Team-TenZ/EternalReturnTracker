@@ -21,6 +21,7 @@ import com.example.eternalreturntracker.R;
 import com.example.eternalreturntracker.models.CharacterStat;
 import com.example.eternalreturntracker.models.EternalReturnInterface;
 import com.example.eternalreturntracker.models.User;
+import com.example.eternalreturntracker.models.UserGameInfo.Test;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -42,6 +43,7 @@ import static com.example.eternalreturntracker.MainActivity.REST_CONSUMER_KEY;
 public class CharacterFragment extends Fragment {
 
     private String searchedCharacter;
+    private int characterCode;
     private TextView tvUsername;
     private TextView tvWinrate;
     private TextView tvTop5;
@@ -50,7 +52,6 @@ public class CharacterFragment extends Fragment {
     private ImageView ivProfile;
     private TextView tvRank;
     private TextView tvSeasonWins;
-
 
     public enum Characters{
         Jackie,
@@ -83,6 +84,7 @@ public class CharacterFragment extends Fragment {
         Sua,
         Leon
     }
+
     public CharacterFragment() {
         // Required empty public constructor
     }
@@ -97,6 +99,7 @@ public class CharacterFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         tvUsername= view.findViewById(R.id.tvCharacter);
         tvWinrate = view.findViewById(R.id.tvWinrate);
         tvTop5 = view.findViewById(R.id.tvTop5);
@@ -108,7 +111,9 @@ public class CharacterFragment extends Fragment {
         MainActivity activity = (MainActivity) getActivity();
         searchedCharacter = activity.returnCharacter();
         Log.i("CHARACTER FRAGMENT", searchedCharacter);
-
+        Test t1 = new Test(searchedCharacter);
+        t1.characterFun();
+        characterCode = t1.getNumber();
 
 
         // RETROFIT RELATED THINGS
