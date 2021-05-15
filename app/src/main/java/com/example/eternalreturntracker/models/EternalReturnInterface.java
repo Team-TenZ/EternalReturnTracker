@@ -25,4 +25,5 @@ public interface EternalReturnInterface {
 
     @GET("/v1/data/Character")
     Call<CharacterStat> getCharacter();
+
 }

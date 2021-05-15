@@ -132,6 +132,7 @@ public class CharacterFragment extends Fragment {
 
         final EternalReturnInterface eternalReturnInterface = retrofit.create(EternalReturnInterface.class);
 
+        /*
         Call<CharacterStat> call = eternalReturnInterface.getCharacter();
         call.enqueue(new Callback<CharacterStat>() {
             @Override
@@ -146,6 +147,7 @@ public class CharacterFragment extends Fragment {
                     }
 
                     Log.i("CHARACTER FRAGMENT", new Gson().toJson(response.body(),User.class));
+
 
                     Call<CharacterStat> call2 = eternalReturnInterface.getUserStats(String.valueOf(response.body().getMoreUserDetails().getUserNum()),"0");
                     call2.enqueue(new Callback<CharacterStat>() {
@@ -204,6 +206,8 @@ public class CharacterFragment extends Fragment {
                 Log.i("STUFF", "onFailure for TRYING TO ENQUEUE THINGY", t);
             }
         });
+        */
+
 
     }
 
