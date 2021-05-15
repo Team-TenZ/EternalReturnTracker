@@ -103,6 +103,7 @@ public class CharacterFragment extends Fragment {
         tvHpRegen = view.findViewById(R.id.tvHpRegen);
         tvSpRegen = view.findViewById(R.id.tvSpRegen);
         tvAtk = view.findViewById(R.id.tvAtk);
+        tvDef = view.findViewById(R.id.tvDef);
         tvAtkSpd = view.findViewById(R.id.tvAtkSpd);
         tvSpd = view.findViewById(R.id.tvSpd);
 
@@ -148,9 +149,14 @@ public class CharacterFragment extends Fragment {
                     }
 
                     Log.i("CHARACTER FRAGMENT", new Gson().toJson(response.body(), Character.class));
-                    tvHp.setText(String.valueOf(response.body().getData().get(characterCode-1).getMaxHp()));
-
-
+                    tvHp.setText("Max Hp: "+String.valueOf(response.body().getData().get(characterCode-1).getMaxHp()));
+                    tvSp.setText("Max Sp: "+String.valueOf(response.body().getData().get(characterCode-1).getMaxSp()));
+                    tvHpRegen.setText("Health Regen: "+String.valueOf(response.body().getData().get(characterCode-1).getHpRegen()));
+                    tvSpRegen.setText("Sp Regen: "+String.valueOf(response.body().getData().get(characterCode-1).getSpRegen()));
+                    tvAtk.setText("Attack: "+String.valueOf(response.body().getData().get(characterCode-1).getAttackPower()));
+                    tvDef.setText("Defense: "+String.valueOf(response.body().getData().get(characterCode-1).getDefense()));
+                    tvAtkSpd.setText("Attack Speed: "+String.valueOf(response.body().getData().get(characterCode-1).getAttackSpeed()));
+                    tvSpd.setText("Move Speed: "+String.valueOf(response.body().getData().get(characterCode-1).getMoveSpeed()));
                 }
             }
 
