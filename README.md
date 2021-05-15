@@ -48,12 +48,11 @@ This app allows the user to track other player's stats and win rates in the game
 
 * [x] [Search Screen]
    * [x] [Search Function]
-* [ ] [Character Screen]
-   * [ ] [Character Select]
-* [ ] [Ranking Screen]
-   * [ ] [Ranking View]
-* [ ] [Favorites Screen]
-   * [ ] [Favorites View]
+* [x] [Character Screen]
+   * [x] [Character Select]
+* [x] [Ranking Screen]
+   * [x] [Ranking View]
+
 
 ### 3. Navigation
 
@@ -62,7 +61,6 @@ This app allows the user to track other player's stats and win rates in the game
 * [x] [Search]
 * [x] [Character]
 * [x] [Ranking]
-* [x] [Favorites]
 
 **Flow Navigation** (Screen to Screen)
 
