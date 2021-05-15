@@ -153,7 +153,7 @@ public class CharacterFragment extends Fragment {
                     }
 
                     Log.i("CHARACTER FRAGMENT", new Gson().toJson(response.body(), Character.class));
-                    tvHp.setText(response.body().getCharacterStats().get(characterCode-1).getMaxHp());
+                    tvHp.setText(response.body().getData().get(characterCode-1).getMaxHp());
 
 
                 }
