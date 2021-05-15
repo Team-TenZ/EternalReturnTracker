@@ -34,7 +34,7 @@ public class Character{
         this.code = code;
     }
 
-    public List<CharacterStat> getUserStats(){ return characterStats; }
+    public List<CharacterStat> getCharacterStats(){ return characterStats; }
 
     public void setUserStats(List<CharacterStat> characterStats){
         this.characterStats = characterStats;

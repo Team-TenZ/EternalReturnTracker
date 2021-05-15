@@ -44,14 +44,16 @@ public class CharacterFragment extends Fragment {
 
     private String searchedCharacter;
     private int characterCode;
-    private TextView tvUsername;
-    private TextView tvWinrate;
-    private TextView tvTop5;
-    private TextView tvAveragePlace;
-
+    private TextView tvCharacter;
+    private TextView tvHp;
+    private TextView tvSp;
+    private TextView tvHpRegen;
+    private TextView tvSpRegen;
+    private TextView tvAtk;
+    private TextView tvDef;
+    private TextView tvAtkSpd;
+    private TextView tvSpd;
     private ImageView ivProfile;
-    private TextView tvRank;
-    private TextView tvSeasonWins;
 
     public enum Characters{
         Jackie,
@@ -100,13 +102,14 @@ public class CharacterFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        tvUsername= view.findViewById(R.id.tvCharacter);
-        tvWinrate = view.findViewById(R.id.tvWinrate);
-        tvTop5 = view.findViewById(R.id.tvTop5);
-        tvAveragePlace = view.findViewById(R.id.tvAveragePlace);
-        tvRank = view.findViewById(R.id.tvRank);
-        tvSeasonWins = view.findViewById(R.id.tvSeasonWins);
-
+        tvCharacter= view.findViewById(R.id.tvCharacter);
+        tvHp = view.findViewById(R.id.tvHp);
+        tvSp = view.findViewById(R.id.tvSp);
+        tvHpRegen = view.findViewById(R.id.tvHpRegen);
+        tvSpRegen = view.findViewById(R.id.tvSpRegen);
+        tvAtk = view.findViewById(R.id.tvAtk);
+        tvAtkSpd = view.findViewById(R.id.tvAtkSpd);
+        tvSpd = view.findViewById(R.id.tvSpd);
 
         MainActivity activity = (MainActivity) getActivity();
         searchedCharacter = activity.returnCharacter();
@@ -114,6 +117,7 @@ public class CharacterFragment extends Fragment {
         Test t1 = new Test(searchedCharacter);
         t1.characterFun();
         characterCode = t1.getNumber();
+        tvCharacter.setText(searchedCharacter);
 
 
         // RETROFIT RELATED THINGS
@@ -137,80 +141,28 @@ public class CharacterFragment extends Fragment {
 
         final EternalReturnInterface eternalReturnInterface = retrofit.create(EternalReturnInterface.class);
 
-        Call<CharacterStat> call = eternalReturnInterface.getCharacter();
-        call.enqueue(new Callback<CharacterStat>() {
+        Call<Character> call = eternalReturnInterface.getCharacter();
+        call.enqueue(new Callback<Character>() {
             @Override
-            public void onResponse(Call<CharacterStat> call, Response<CharacterStat> response) {
+            public void onResponse(Call<Character> call, Response<Character> response) {
 
-
-                // CALLS THE 2nd GET, TO GET USERSTATS AFTER GETTING THE USERNUM
-                if(response != null) {
-                    if(response.body().getCharacterCode() == 1){
-                        Log.i("CHARACTER FRAGMENT","FAILED");
+                if (response != null) {
+                    if (characterCode == 0) {
+                        Log.i("CHARACTER FRAGMENT", "FAILED");
                         return;
                     }
 
-                    Log.i("CHARACTER FRAGMENT", new Gson().toJson(response.body(),User.class));
+                    Log.i("CHARACTER FRAGMENT", new Gson().toJson(response.body(), Character.class));
+                    tvHp.setText(response.body().getCharacterStats().get(characterCode-1).getMaxHp());
 
-                    Call<CharacterStat> call2 = eternalReturnInterface.getUserStats(String.valueOf(response.body().getMoreUserDetails().getUserNum()),"0");
-                    call2.enqueue(new Callback<CharacterStat>() {
-                        @Override
-                        public void onResponse(Call<CharacterStat> call2, Response<CharacterStat> response2) {
-
-                            if(response2 != null){
-                                DecimalFormat precision = new DecimalFormat("0.0");
-
-                                Log.i("CHARACTER FRAGMENT", new Gson().toJson(response2.body(),User.class));
-
-                                //WINRATE
-                                float winrate = ( (float) response2.body().getUserStats().get(0).getTotalWins() / response2.body().getUserStats().get(0).getTotalGames() * 100);
-                                tvWinrate.setText("Win rate: " + precision.format(winrate) + "%");
-
-                                //TOP5
-                                float top5 = (float) (response2.body().getUserStats().get(0).getTop5()*100);
-                                tvTop5.setText("Top 5 rate: " + precision.format(top5) + "%");
-
-                                //AVERAGE PLACE
-                                double averagePlace = response2.body().getUserStats().get(0).getAverageRank();
-                                tvAveragePlace.setText("Average Place: #" + averagePlace);
-
-                                //MMR
-                                int rank = response2.body().getUserStats().get(0).getMmr();
-                                if(rank == 0) {
-                                    Log.i("USER FRAGMENT", "No MMR");
-                                    tvRank.setText("No Rank");
-                                }
-                                else{
-                                    tvRank.setText("MMR: " + rank);
-                                }
-
-                                //SEASON WINS
-                                int seasonWins = response2.body().getUserStats().get(0).getTotalWins();
-                                tvSeasonWins.setText("Season Wins: " + seasonWins + " wins");
-
-
-
-
-                            }
-
-                        }
-                        @Override
-                        public void onFailure(Call<CharacterStat> call, Throwable t) {
-                            Log.i("STUFF2", "onFailure for TRYING TO ENQUEUE THINGY", t);
-                        }
-                    });
 
                 }
-
             }
 
             @Override
-            public void onFailure(Call<CharacterStat> call, Throwable t) {
+            public void onFailure(Call<Character> call, Throwable t) {
                 Log.i("STUFF", "onFailure for TRYING TO ENQUEUE THINGY", t);
             }
         });
-
     }
-
-
 }

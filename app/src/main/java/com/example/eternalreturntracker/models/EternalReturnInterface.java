@@ -24,7 +24,7 @@ public interface EternalReturnInterface {
     Call<User> getUserGames(@Path("userNum") String userNum);
 
     @GET("/v1/data/Character")
-    Call<CharacterStat> getCharacter();
+    Call<Character> getCharacter();
 
     @GET("/v1/rank/{seasonId}/{matchingTeamMode}")
     Call<Ranking> getTopRanks(@Path("seasonId") String seasonId, @Path("matchingTeamMode") String teamMode);

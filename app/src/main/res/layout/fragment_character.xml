@@ -10,6 +10,54 @@
 
 
     <TextView
+        android:id="@+id/tvSpd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAtkSpd"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="50dp"
+        android:text="Move Speed: 3.1"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvAtkSpd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAtk"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="50dp"
+        android:text="Attack Speed: .12"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvSpRegen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvHp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_toEndOf="@+id/tvHp"
+        android:text="Sp Regen: 2.1"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvHpRegen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvHp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:text="Hp Regen: .5"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
         android:id="@+id/tvCharacter"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -18,7 +66,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="-15dp"
         android:singleLine="true"
-        android:text="Adele"
+        android:text="Jackie"
         android:textColor="@color/white"
         android:textSize="24sp" />
 
@@ -32,40 +80,30 @@
         android:layout_marginEnd="0dp"
         android:background="@android:color/white" />
 
-    <TextView
-        android:id="@+id/tvWinrate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/divider"
-        android:layout_alignStart="@+id/tvCharacter"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="5dp"
-        android:text="Win Rate: 5%"
-        android:textColor="@color/white" />
 
     <TextView
-        android:id="@+id/tvTop5"
+        android:id="@+id/tvDef"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvWinrate"
-        android:layout_alignStart="@+id/tvWinrate"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="3dp"
-        android:text="Top 5 rate: 25%"
-        android:textColor="@color/white" />
-
-
-    <TextView
-        android:id="@+id/tvAveragePlace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvTop5"
-        android:layout_alignStart="@+id/tvTop5"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="3dp"
-        android:text="Average Place: #4.8"
+        android:layout_below="@+id/tvSpRegen"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_toEndOf="@+id/tvHp"
+        android:text="Defense: 26"
         android:textColor="@color/white"
-        android:textSize="14sp" />
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvAtk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvHpRegen"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:text="Attack: 35"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/ivProfile"
@@ -78,26 +116,26 @@
         android:background="@drawable/profileimage" />
 
     <TextView
-        android:id="@+id/tvRank"
+        android:id="@+id/tvHp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivProfile"
         android:layout_alignParentStart="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
-        android:text="Rank: Diamond 3"
+        android:layout_marginTop="50dp"
+        android:text="Max Hp: 590"
         android:textColor="@color/white"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/tvSeasonWins"
+        android:id="@+id/tvSp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvRank"
-        android:layout_alignStart="@+id/tvRank"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="3dp"
-        android:text="Season Wins: 6 wins"
+        android:layout_below="@+id/ivProfile"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_toEndOf="@+id/tvHp"
+        android:text="Max Sp: 430"
         android:textColor="@color/white"
         android:textSize="20sp" />
 

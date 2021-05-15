@@ -5,92 +5,214 @@ import com.google.gson.annotations.SerializedName;
 
 public class CharacterStat {
 
-    @SerializedName("characterCode")
+    @SerializedName("code")
     @Expose
-    private Integer characterCode;
-    @SerializedName("totalGames")
+    private Integer code;
+    @SerializedName("name")
     @Expose
-    private Integer totalGames;
-    @SerializedName("usages")
+    private String name;
+    @SerializedName("maxHp")
     @Expose
-    private Integer usages;
-    @SerializedName("maxKillings")
+    private Integer maxHp;
+    @SerializedName("maxSp")
     @Expose
-    private Integer maxKillings;
-    @SerializedName("top3")
+    private Integer maxSp;
+    @SerializedName("initExtraPoint")
     @Expose
-    private Integer top3;
-    @SerializedName("wins")
+    private Integer initExtraPoint;
+    @SerializedName("maxExtraPoint")
     @Expose
-    private Integer wins;
-    @SerializedName("top3Rate")
+    private Integer maxExtraPoint;
+    @SerializedName("attackPower")
     @Expose
-    private Integer top3Rate;
-    @SerializedName("averageRank")
+    private Integer attackPower;
+    @SerializedName("defense")
     @Expose
-    private Integer averageRank;
+    private Integer defense;
+    @SerializedName("criticalStrikeChance")
+    @Expose
+    private Integer criticalStrikeChance;
+    @SerializedName("hpRegen")
+    @Expose
+    private Double hpRegen;
+    @SerializedName("spRegen")
+    @Expose
+    private Double spRegen;
+    @SerializedName("attackSpeed")
+    @Expose
+    private Double attackSpeed;
+    @SerializedName("attackSpeedLimit")
+    @Expose
+    private Double attackSpeedLimit;
+    @SerializedName("attackSpeedMin")
+    @Expose
+    private Integer attackSpeedMin;
+    @SerializedName("moveSpeed")
+    @Expose
+    private Double moveSpeed;
+    @SerializedName("sightRange")
+    @Expose
+    private Integer sightRange;
+    @SerializedName("radius")
+    @Expose
+    private Double radius;
+    @SerializedName("uiHeight")
+    @Expose
+    private Double uiHeight;
+    @SerializedName("resource")
+    @Expose
+    private String resource;
 
-    public Integer getCharacterCode() {
-        return characterCode;
+    public Integer getCode() {
+        return code;
     }
 
-    public void setCharacterCode(Integer characterCode) {
-        this.characterCode = characterCode;
+    public void setCode(Integer code) {
+        this.code = code;
     }
 
-    public Integer getTotalGames() {
-        return totalGames;
+    public String getName() {
+        return name;
     }
 
-    public void setTotalGames(Integer totalGames) {
-        this.totalGames = totalGames;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getUsages() {
-        return usages;
+    public Integer getMaxHp() {
+        return maxHp;
     }
 
-    public void setUsages(Integer usages) {
-        this.usages = usages;
+    public void setMaxHp(Integer maxHp) {
+        this.maxHp = maxHp;
     }
 
-    public Integer getMaxKillings() {
-        return maxKillings;
+    public Integer getMaxSp() {
+        return maxSp;
     }
 
-    public void setMaxKillings(Integer maxKillings) {
-        this.maxKillings = maxKillings;
+    public void setMaxSp(Integer maxSp) {
+        this.maxSp = maxSp;
     }
 
-    public Integer getTop3() {
-        return top3;
+    public Integer getInitExtraPoint() {
+        return initExtraPoint;
     }
 
-    public void setTop3(Integer top3) {
-        this.top3 = top3;
+    public void setInitExtraPoint(Integer initExtraPoint) {
+        this.initExtraPoint = initExtraPoint;
     }
 
-    public Integer getWins() {
-        return wins;
+    public Integer getMaxExtraPoint() {
+        return maxExtraPoint;
     }
 
-    public void setWins(Integer wins) {
-        this.wins = wins;
+    public void setMaxExtraPoint(Integer maxExtraPoint) {
+        this.maxExtraPoint = maxExtraPoint;
     }
 
-    public Integer getTop3Rate() {
-        return top3Rate;
+    public Integer getAttackPower() {
+        return attackPower;
     }
 
-    public void setTop3Rate(Integer top3Rate) {
-        this.top3Rate = top3Rate;
+    public void setAttackPower(Integer attackPower) {
+        this.attackPower = attackPower;
     }
 
-    public Integer getAverageRank() {
-        return averageRank;
+    public Integer getDefense() {
+        return defense;
     }
 
-    public void setAverageRank(Integer averageRank) {
-        this.averageRank = averageRank;
+    public void setDefense(Integer defense) {
+        this.defense = defense;
     }
+
+    public Integer getCriticalStrikeChance() {
+        return criticalStrikeChance;
+    }
+
+    public void setCriticalStrikeChance(Integer criticalStrikeChance) {
+        this.criticalStrikeChance = criticalStrikeChance;
+    }
+
+    public Double getHpRegen() {
+        return hpRegen;
+    }
+
+    public void setHpRegen(Double hpRegen) {
+        this.hpRegen = hpRegen;
+    }
+
+    public Double getSpRegen() {
+        return spRegen;
+    }
+
+    public void setSpRegen(Double spRegen) {
+        this.spRegen = spRegen;
+    }
+
+    public Double getAttackSpeed() {
+        return attackSpeed;
+    }
+
+    public void setAttackSpeed(Double attackSpeed) {
+        this.attackSpeed = attackSpeed;
+    }
+
+    public Double getAttackSpeedLimit() {
+        return attackSpeedLimit;
+    }
+
+    public void setAttackSpeedLimit(Double attackSpeedLimit) {
+        this.attackSpeedLimit = attackSpeedLimit;
+    }
+
+    public Integer getAttackSpeedMin() {
+        return attackSpeedMin;
+    }
+
+    public void setAttackSpeedMin(Integer attackSpeedMin) {
+        this.attackSpeedMin = attackSpeedMin;
+    }
+
+    public Double getMoveSpeed() {
+        return moveSpeed;
+    }
+
+    public void setMoveSpeed(Double moveSpeed) {
+        this.moveSpeed = moveSpeed;
+    }
+
+    public Integer getSightRange() {
+        return sightRange;
+    }
+
+    public void setSightRange(Integer sightRange) {
+        this.sightRange = sightRange;
+    }
+
+    public Double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(Double radius) {
+        this.radius = radius;
+    }
+
+    public Double getUiHeight() {
+        return uiHeight;
+    }
+
+    public void setUiHeight(Double uiHeight) {
+        this.uiHeight = uiHeight;
+    }
+
+    public String getResource() {
+        return resource;
+    }
+
+    public void setResource(String resource) {
+        this.resource = resource;
+    }
+
 }
